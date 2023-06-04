@@ -1,0 +1,167 @@
+.section-cards {
+  margin-top: 50px;
+
+  @include mediaMax(1160px) {
+    margin-top: 20px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include mediaMax(1160px) {
+    flex-direction: column;
+  }
+}
+
+.cards__container {
+  width: calc(50% - 10px);
+  height: 380px;
+  display: flex;
+  gap: 20px;
+
+  @include mediaMax(1160px) {
+    width: 100%;
+  }
+
+  @include mediaMax(430px) {
+    height: 300px;
+  }
+
+  &.horizontal {
+    flex-direction: column;
+
+    .cards__item-link {
+      height: 180px;
+    }
+  }
+
+  &.vertical {
+    @include mediaMax(560px) {
+      height: 270px;
+    }
+
+    @include mediaMax(430px) {
+      height: 200px;
+    }
+
+    .cards__item-block {
+      width: 50%;
+    }
+  }
+}
+
+.cards__item-link {
+  width: 100%;
+  height: 100%;
+}
+
+.cards__item-block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.sale-block {
+    h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include SofiaSans(30px, 700, 46px);
+      color: $black;
+      width: 90%;
+      text-align: center;
+
+      @include mediaMax(430px) {
+        font-size: 24px;
+        line-height: 34px;
+      }
+    }
+  }
+
+  &.hot-block {
+    img {
+      @include mediaMax(1366px) {
+        object-position: center left;
+      }
+
+      @include mediaMax(430px) {
+        object-position: center center;
+      }
+    }
+  }
+}
+
+.cards__item-text {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+
+  @include mediaMax(430px) {
+    width: 60%;
+  }
+
+  h3 {
+    @include SofiaSans(26px, 800, 28px);
+
+    @include mediaMax(430px) {
+      font-size: 24px;
+      line-height: 26px;
+    }
+
+    @include mediaMax(320px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    @include SofiaSans(15px, 400, 20px);
+    color: $black;
+  }
+
+  &.hot {
+    h3 {
+      color: $blue;
+    }
+  }
+
+  &.buy {
+    h3 {
+      color: $red;
+    }
+  }
+}
+
+.cards__item-add {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    width: 15px;
+    height: 14px;
+  }
+}

@@ -1,0 +1,31 @@
+$white: #fff;
+$black: #000;
+$yellow: #F4DE4D;
+$blue: #001AA2;
+$red: #FD2E24;
+
+@mixin CircularSans($size,$w,$lh) {
+  font-family: 'Circular Std', sans-serif;
+  font-size: $size;
+  font-weight: $w;
+  line-height: $lh;
+}
+
+@mixin SofiaSans($size,$w,$lh) {
+  font-family: 'Sofia Pro', sans-serif;
+  font-size: $size;
+  font-weight: $w;
+  line-height: $lh;
+}
+
+@mixin mediaMax($w) {
+  @media screen and (max-width: $w) {
+    @content;
+  }
+}
+
+@mixin mediaMin($w) {
+  @media screen and (min-width: $w) {
+    @content;
+  }
+}
